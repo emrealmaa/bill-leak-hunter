@@ -78,4 +78,4 @@ npm run dev
 
 ## Lisans
 
-Henüz belirlenmedi.
+[MIT](LICENSE) © 2026 emrealmaa

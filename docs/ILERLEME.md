@@ -35,11 +35,10 @@
 6. Tablo tamamlanınca DebugPage "Ayrıştırılmış işlemler" sekmesinde iki ekstreyi gözle kontrol et.
 7. Gerçek sonuçlarda bildiğin abonelikler bulunuyor mu, yanlış pozitif var mı bak.
 8. Teknik bilgisi olmayan birine siteyi dene.
-9. Lisansı seç (öneri: MIT).
+9. ~~Lisansı seç (öneri: MIT).~~ ✅ MIT seçildi, `LICENSE` eklendi.
 10. Sentetik veriyle ekran görüntüsü al (README'lerdeki yer tutucu için).
 
 ## Açık sorular
 
 - Sentetik fixture'ın sütun düzeni ve satır tipleri (özellikle "Kalan Borç / Taksit" sütununun içeriği ve yabancı para ekinin yazılışı) gerçek ekstreyi görmeden tahminle yazıldı. Glif tablosu bitince `akbank-check` sayıları buna göre ayrıştırıcıda düzeltme gerekip gerekmediğini gösterecek.
-- Lisans (öneri: MIT). Karar verilince LICENSE eklenecek ve README'lerdeki "Henüz belirlenmedi" satırı güncellenecek.
 - Issue şablonlarındaki `bank-request` ve `catalog` etiketleri repoda yok; GitHub var olmayan etiketi uygulamaz. İstenirse etiketler oluşturulabilir.

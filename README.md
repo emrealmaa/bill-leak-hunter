@@ -74,4 +74,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md): adding a bank, labeling Type3 glyphs, ad
 
 ## License
 
-Not decided yet.
+[MIT](LICENSE) © 2026 emrealmaa
