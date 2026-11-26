@@ -219,16 +219,20 @@ Her banka tek bir arayüzü uygular. Yeni banka eklemek = yeni bir klasör + bu 
 
 ```ts
 interface BankParser {
-  id: string;                          // "ornek-banka"
+  id: string;                               // "ornek-banka"
   displayName: string;
-  detect(pages: PdfPage[]): boolean;   // bu ekstre bu bankaya mı ait
-  parse(pages: PdfPage[]): {
+  glyphTable?: ReadonlyMap<string, string>; // Type3 fontlu ekstreler için glif hash → karakter
+  detect(lines: StatementLine[]): boolean;  // bu ekstre bu bankaya mı ait
+  parse(lines: StatementLine[]): {
     transactions: Transaction[];
     period?: { start: string; end: string };
-    warnings: string[];                // okunamayan satırlar vb.
+    warnings: ParseWarning[];               // { page, line, reason }: içerik değil, yer ve sebep
+    summary?: { statementDebt?: number; previousDebt?: number };
   };
 }
 ```
+
+Ayrıştırıcı ham PDF sayfası (`PdfPage[]`) değil, **çözülmüş satırlar** (`StatementLine[]`) alır: her satırın sayfası, sırası ve x konumlu hücreleri vardır. Type3 fontlu ekstrelerde metni glif tablosuyla çözmek ortak koddadır; ayrıştırıcı yalnızca metinle uğraşır.
 
 ---
 
