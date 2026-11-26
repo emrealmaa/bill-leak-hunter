@@ -10,6 +10,7 @@ import {
 import type { TextItem } from "pdfjs-dist/types/src/display/api";
 // Worker, Vite tarafından uygulamayla birlikte paketlenir (CDN yok, PROJE.md §10).
 import workerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+import type { RawStatement } from "../banks/decodeStatement";
 import type { PdfPage, PdfTextItem } from "../types";
 import { extractPageGlyphs, type GlyphSourcePage, type PositionedGlyph } from "./glyphs";
 
@@ -77,6 +78,33 @@ export async function readPdf(source: File | ArrayBuffer): Promise<PdfPage[]> {
       page.cleanup();
     }
     return pages;
+  } catch (err) {
+    throw toReadError(err);
+  } finally {
+    await task?.destroy();
+  }
+}
+
+/**
+ * Ekstre analizi için PDF'i okur: her sayfanın pdf.js metni ve (Type3 fontlu
+ * ekstreleri çözmek için) konumlanmış glifleri. Belge okunduktan sonra
+ * bellekten bırakılır; veri hiçbir yere gönderilmez.
+ */
+export async function readStatementPdf(source: File | ArrayBuffer): Promise<RawStatement> {
+  let task: PDFDocumentLoadingTask | undefined;
+  try {
+    task = await open(source, { fontExtraProperties: true });
+    const doc = await task.promise;
+    const pages: PdfPage[] = [];
+    const glyphs: PositionedGlyph[][] = [];
+    const hashCache = new Map<string, string>();
+    for (let n = 1; n <= doc.numPages; n++) {
+      const page = await doc.getPage(n);
+      pages.push(await readPageText(page, n));
+      glyphs.push(await extractPageGlyphs(page as unknown as GlyphSourcePage, OPS, hashCache));
+      page.cleanup();
+    }
+    return { pages, glyphs };
   } catch (err) {
     throw toReadError(err);
   } finally {
