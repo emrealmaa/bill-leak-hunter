@@ -63,6 +63,7 @@ npm run dev
 | `npm run validate-catalog` | Validates `catalog/` files against the schema |
 | `npm run akbank-check -- [--table <glyphs.json>] <a.pdf> [<b.pdf> …]` | Runs detection + parsing on real Akbank statements (prints numbers and yes/no only) |
 | `node scripts/font-check.ts [--all-pages] <a.pdf> <b.pdf>` | Compares the font/glyph structure of two statements (numbers only) |
+| `npm run scan-urls` | Lists every URL in `dist/` with the reason it is there (run after `npm run build`) |
 | `npm run privacy-check [-- --history [--ref <branch>]]` | Pre-push privacy check: PDFs, `private/blocklist.txt` terms, long digit runs, absolute paths |
 
 ## Contributing

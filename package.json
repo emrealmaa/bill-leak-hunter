@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "privacy-check": "node scripts/privacy-check.ts",
-    "akbank-check": "node scripts/akbank-check.ts"
+    "akbank-check": "node scripts/akbank-check.ts",
+    "scan-urls": "node scripts/scan-urls.ts"
   },
   "dependencies": {
     "pdfjs-dist": "6.5.438",

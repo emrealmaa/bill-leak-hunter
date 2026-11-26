@@ -61,6 +61,7 @@ npm run dev
 | `npm run validate-catalog` | `catalog/` dosyalarını şemaya göre doğrular |
 | `npm run akbank-check -- [--table <glyphs.json>] <a.pdf> [<b.pdf> …]` | Gerçek Akbank ekstrelerinde tanıma + ayrıştırmayı dener (yalnızca sayı ve evet/hayır yazdırır) |
 | `node scripts/font-check.ts [--all-pages] <a.pdf> <b.pdf>` | İki ekstrenin font/glif yapısını karşılaştırır (yalnızca sayı yazdırır) |
+| `npm run scan-urls` | `dist/` içindeki her adresi, neden orada olduğuyla listeler (`npm run build` sonrası) |
 | `npm run privacy-check [-- --history [--ref <branch>]]` | Push öncesi gizlilik kontrolü: PDF, `private/blocklist.txt` ifadeleri, uzun rakamlar, mutlak yollar |
 
 ## Gizlilik (geliştiriciler için)

@@ -20,6 +20,7 @@
 | 10 — Arayüz | ✅ bitti · ⏳ "teknik olmayan biri anlıyor mu" denemesi Emre'de | Karşılama, işleniyor, hata, sonuç ekranları; TR/EN; DebugPage yalnızca `npm run dev` + `#debug` |
 | 11 — CSV dışa aktarma | ✅ bitti | UTF-8 BOM, TR'de `;` + virgüllü ondalık, formül enjeksiyonuna karşı koruma |
 | 12 — Dokümantasyon | ✅ bitti · ⏳ lisans kararı Emre'de | README (EN) + README.tr.md, CONTRIBUTING.md, 3 issue şablonu. LICENSE eklenmedi. Ekran görüntüsü yerine yer tutucu |
+| 13 — Yayın öncesi denetim | ✅ otomatik kısım bitti · ⏳ Network sekmesi kontrolü Emre'de | `npm run scan-urls` (0 açıklanmamış adres), CSP (yalnızca build), pdf.js dinamik import |
 
 ## Açık sorular
 
