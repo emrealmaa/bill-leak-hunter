@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { StatementError } from "../banks/errors";
 import { parsers } from "../banks/registry";
 import { REPO_URL } from "../config";
+import { buildCsv, downloadCsv } from "../export/csv";
 import { I18nContext, MESSAGES, type Lang } from "../i18n";
 import type { StatementReport } from "../pipeline";
 import { ErrorView, type AppErrorCode } from "./ErrorView";
@@ -91,7 +92,13 @@ export function App() {
           )}
           {state.screen === "processing" && <Processing />}
           {state.screen === "error" && <ErrorView code={state.code} onRetry={reset} />}
-          {state.screen === "result" && <Results report={state.report} onReset={reset} />}
+          {state.screen === "result" && (
+            <Results
+              report={state.report}
+              onReset={reset}
+              onDownloadCsv={() => downloadCsv(buildCsv(state.report, m), m.csv.fileName)}
+            />
+          )}
         </main>
 
         <footer className="border-t border-slate-200 bg-white">
