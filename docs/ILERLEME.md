@@ -11,7 +11,8 @@
 | 1 — Etiketleme aracı doğrulama | ⏳ Emre bekleniyor | Tarayıcıda gerçek ekstreyle kontrol |
 | 2 — Glif tablosu | ⏳ Emre bekleniyor | Etiketleme; `src/banks/akbank/glyphs.json` doldurulacak |
 | 3 — Ayrıştırıcı altyapısı | ✅ bitti | `StatementLine[]` girdisi, detect, tarih/tutar/para birimi yardımcıları |
+| 4 — Akbank detect + sentetik fixture | ✅ bitti · ⏳ fixture gözden geçirmesi Emre'de | `tests/fixtures/akbank/ornek-ekstre.txt`; boş glif tablosuyla "karakter tablosu eksik" hatası |
 
 ## Açık sorular
 
-- Yok.
+- Sentetik fixture'ın sütun düzeni ve satır tipleri (özellikle "Kalan Borç / Taksit" sütununun içeriği ve yabancı para ekinin yazılışı) gerçek ekstreyi görmeden tahminle yazıldı. Emre yapının gerçeğe benzeyip benzemediğini söylemeli (içerik göstermeden).
