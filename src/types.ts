@@ -83,16 +83,50 @@ export interface RecurringCharge {
 
 // --- Banka ayrıştırıcısı ---
 
+// Satırdaki tek bir metin hücresi (pdf.js parçası ya da çözülmüş glif dizisi).
+export interface TextCell {
+  text: string;
+  x: number; // sol kenar (PDF birimi)
+  width: number;
+}
+
+// Ekstrenin görsel bir satırı. Type3 fontlu PDF'lerde metin, glif tablosuyla
+// çözülmüş haldedir; ayrıştırıcı ham PDF ile uğraşmaz.
+export interface StatementLine {
+  page: number; // 1'den başlar
+  index: number; // belgedeki sıra (0'dan başlar); uyarılarda içerik yerine bu yazılır
+  y: number;
+  text: string; // hücreler " " ile birleşik
+  cells: TextCell[]; // soldan sağa
+}
+
+export type ParseWarningReason =
+  | "unreadable-date"
+  | "unreadable-amount"
+  | "unknown-glyph"
+  | "unknown-layout";
+
+// Uyarılar içerik taşımaz: yalnızca satır yeri ve sebep (PROJE.md §10).
+export interface ParseWarning {
+  page: number;
+  line: number; // StatementLine.index
+  reason: ParseWarningReason;
+}
+
 export interface ParseResult {
   transactions: Transaction[];
   period?: { start: string; end: string };
-  warnings: string[]; // okunamayan satırlar vb.
+  warnings: ParseWarning[];
+  // Ekstrenin özet alanları (varsa); toplam kontrolü için.
+  summary?: { statementDebt?: number; previousDebt?: number };
 }
 
 // Her banka bu arayüzü uygular.
 export interface BankParser {
   id: string; // "ornek-banka"
   displayName: string;
-  detect(pages: PdfPage[]): boolean; // bu ekstre bu bankaya mı ait
-  parse(pages: PdfPage[]): ParseResult;
+  // Type3 fontlu, kopyalanamayan ekstreler için glif şekil hash'i → karakter tablosu.
+  glyphTable?: ReadonlyMap<string, string>;
+  detect(lines: StatementLine[]): boolean; // bu ekstre bu bankaya mı ait
+  parse(lines: StatementLine[]): ParseResult;
 }
