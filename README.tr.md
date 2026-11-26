@@ -2,7 +2,7 @@
 
 [English](README.md) · **Türkçe**
 
-**Canlı site:** https://emrealmaa.github.io/bill-leak-hunter/ _(GitHub Pages açıldıktan sonra)_
+**Canlı site:** https://emrealmaa.github.io/bill-leak-hunter/
 
 Kredi kartı ekstreni yükle, her ay farkında olmadan nereye para kaçırdığını gör:
 abonelikler, düzenli tekrarlayan ödemeler, banka ücretleri, vergiler, faizler ve kalan taksitler.
