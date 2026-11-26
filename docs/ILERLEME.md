@@ -18,6 +18,7 @@
 | 8 — Ücret ve vergi kuralları | ✅ bitti | 15 kural (`catalog/fees/`): ücretler, KKDF/BSMV/damga vergisi, faiz türleri; açıklamalar bilgilendirici |
 | 9 — Analiz motoru | ✅ sentetikle bitti · ⏳ gerçek ekstre kontrolü Emre'de | `src/analysis/`, uçtan uca hat `src/pipeline.ts`. Gerçek kontrol glif tablosunu bekliyor |
 | 10 — Arayüz | ✅ bitti · ⏳ "teknik olmayan biri anlıyor mu" denemesi Emre'de | Karşılama, işleniyor, hata, sonuç ekranları; TR/EN; DebugPage yalnızca `npm run dev` + `#debug` |
+| 11 — CSV dışa aktarma | ✅ bitti | UTF-8 BOM, TR'de `;` + virgüllü ondalık, formül enjeksiyonuna karşı koruma |
 
 ## Açık sorular
 
