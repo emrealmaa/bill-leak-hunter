@@ -20,13 +20,15 @@
 | 10 — Arayüz | ✅ bitti · ⏳ "teknik olmayan biri anlıyor mu" denemesi Emre'de | Karşılama, işleniyor, hata, sonuç ekranları; TR/EN; DebugPage yalnızca `npm run dev` + `#debug` |
 | 11 — CSV dışa aktarma | ✅ bitti | UTF-8 BOM, TR'de `;` + virgüllü ondalık, formül enjeksiyonuna karşı koruma |
 | 12 — Dokümantasyon | ✅ bitti · ⏳ lisans kararı Emre'de | README (EN) + README.tr.md, CONTRIBUTING.md, 3 issue şablonu. LICENSE eklenmedi. Ekran görüntüsü yerine yer tutucu |
-| 13 — Yayın öncesi denetim | ✅ otomatik kısım bitti · ⏳ Network sekmesi kontrolü Emre'de | `npm run scan-urls` (0 açıklanmamış adres), CSP (yalnızca build), pdf.js dinamik import |
-| 14 — Yayın | ✅ hazırlık bitti · ⏳ Pages'i açmak Emre'de | `.github/workflows/deploy.yml`, Vite `base` `/bill-leak-hunter/` (build + preview). README'lerde canlı adres |
+| 13 — Yayın öncesi denetim | ✅ bitti | `npm run scan-urls` (0 açıklanmamış adres), CSP (yalnızca build), pdf.js dinamik import. Emre'nin Network kontrolü: yalnızca sitenin kendi istekleri, dışarı istek yok, konsol temiz |
+| 14 — Yayın | ✅ bitti | Repo public, site canlı: https://emrealmaa.github.io/bill-leak-hunter/ (Pages kaynağı: GitHub Actions) |
+
+> **Not:** Site canlı ama Akbank glif tablosu (`src/banks/akbank/glyphs.json`) henüz boş. Bu yüzden gerçek Akbank ekstrelerinde uygulama şu an **"Bu ekstrenin karakter tablosu eksik."** hatası veriyor. Aşama 2 bitince düzelecek.
 
 ## Emre'nin yapacakları (sırayla)
 
-1. Repo ayarlarında Settings > Pages > Source'u "GitHub Actions" yap, sonra Actions'ta "Deploy to GitHub Pages"i elle bir kez çalıştır.
-2. Canlı sitede Network sekmesini kontrol et: sayfa yüklendikten ve sentetik/gerçek PDF bırakıldıktan sonra dışarıya istek olmamalı.
+1. ~~Repo ayarlarında Settings > Pages > Source'u "GitHub Actions" yap, sonra Actions'ta "Deploy to GitHub Pages"i elle bir kez çalıştır.~~ ✅
+2. ~~Canlı sitede Network sekmesini kontrol et: sayfa yüklendikten ve sentetik/gerçek PDF bırakıldıktan sonra dışarıya istek olmamalı.~~ ✅
 3. `tests/fixtures/akbank/ornek-ekstre.txt` yapısının gerçek ekstreye benzeyip benzemediğini içerik göstermeden söyle.
 4. Aşama 1: `npm run dev` → `http://localhost:5173/#debug` → etiketleme aracını gerçek ekstreyle dene.
 5. Aşama 2: glifleri etiketle, `private/glyphs.json`'a kaydet; `npm run akbank-check -- --table private/glyphs.json private/<dosya>.pdf` ile çözülmemiş glif sayısını izle.
@@ -41,4 +43,3 @@
 - Sentetik fixture'ın sütun düzeni ve satır tipleri (özellikle "Kalan Borç / Taksit" sütununun içeriği ve yabancı para ekinin yazılışı) gerçek ekstreyi görmeden tahminle yazıldı. Glif tablosu bitince `akbank-check` sayıları buna göre ayrıştırıcıda düzeltme gerekip gerekmediğini gösterecek.
 - Lisans (öneri: MIT). Karar verilince LICENSE eklenecek ve README'lerdeki "Henüz belirlenmedi" satırı güncellenecek.
 - Issue şablonlarındaki `bank-request` ve `catalog` etiketleri repoda yok; GitHub var olmayan etiketi uygulamaz. İstenirse etiketler oluşturulabilir.
-- Deploy workflow'u Pages açılana kadar `main`'e her push'ta "deploy" adımında başarısız olacak (beklenen).

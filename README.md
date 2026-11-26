@@ -2,7 +2,7 @@
 
 **English** · [Türkçe](README.tr.md)
 
-**Live:** https://emrealmaa.github.io/bill-leak-hunter/ _(available once GitHub Pages is enabled)_
+**Live:** https://emrealmaa.github.io/bill-leak-hunter/
 
 Upload your credit card statement and see where money quietly slips away every month:
 subscriptions, recurring payments, bank fees, taxes, interest and remaining installments.
