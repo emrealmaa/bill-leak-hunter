@@ -1,0 +1,26 @@
+[
+  {
+    "id": "macfit",
+    "name": "MACFit",
+    "category": "fitness",
+    "patterns": ["\\bMAC ?FIT"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "mars-athletic",
+    "name": "Mars Athletic Club",
+    "category": "fitness",
+    "patterns": ["\\bMARS ?ATHLETIC"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "strava",
+    "name": "Strava",
+    "category": "fitness",
+    "patterns": ["\\bSTRAVA"],
+    "isSubscription": true,
+    "verified": false
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "nytimes",
+    "name": "The New York Times",
+    "category": "news",
+    "patterns": ["\\bNYTIMES", "\\bNEW ?YORK ?TIMES", "\\bNYT\\b"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "medium",
+    "name": "Medium",
+    "category": "news",
+    "patterns": ["\\bMEDIUM\\.COM", "\\bMEDIUM ?CORP"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "patreon",
+    "name": "Patreon",
+    "category": "news",
+    "patterns": ["\\bPATREON"],
+    "isSubscription": true,
+    "verified": false
+  }
+]

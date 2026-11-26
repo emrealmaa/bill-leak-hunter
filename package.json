@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && tsc -p scripts --noEmit && vite build",
+    "build": "npm run validate-catalog && tsc --noEmit && tsc -p scripts --noEmit && vite build",
+    "validate-catalog": "node scripts/validate-catalog.ts",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",

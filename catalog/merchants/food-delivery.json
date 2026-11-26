@@ -1,0 +1,34 @@
+[
+  {
+    "id": "yemeksepeti",
+    "name": "Yemeksepeti",
+    "category": "food-delivery",
+    "patterns": ["\\bYEMEK ?SEPETI"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "getir",
+    "name": "Getir",
+    "category": "food-delivery",
+    "patterns": ["\\bGETIR\\b"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "trendyol-yemek",
+    "name": "Trendyol Yemek / Go",
+    "category": "food-delivery",
+    "patterns": ["\\bTRENDYOL ?(YEMEK|GO)\\b"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "migros-yemek",
+    "name": "Migros Yemek",
+    "category": "food-delivery",
+    "patterns": ["\\bMIGROS ?YEMEK"],
+    "isSubscription": false,
+    "verified": false
+  }
+]
