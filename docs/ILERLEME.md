@@ -36,7 +36,7 @@
 7. Gerçek sonuçlarda bildiğin abonelikler bulunuyor mu, yanlış pozitif var mı bak.
 8. Teknik bilgisi olmayan birine siteyi dene.
 9. ~~Lisansı seç (öneri: MIT).~~ ✅ MIT seçildi, `LICENSE` eklendi.
-10. Sentetik veriyle ekran görüntüsü al (README'lerdeki yer tutucu için).
+10. ~~Sentetik veriyle ekran görüntüsü al (README'lerdeki yer tutucu için).~~ ✅ `docs/images/` (masaüstü karşılama, masaüstü ve mobil sonuç).
 
 ## Açık sorular
 
