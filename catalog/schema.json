@@ -1,6 +1,59 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sizinti-avcisi/catalog/schema.json",
   "title": "Sızıntı Avcısı katalog şeması",
-  "description": "Taslak. Satıcı (Merchant) ve ücret (FeeRule) kayıtlarının şeması Hafta 2'de yazılacak (PROJE.md §7, §11).",
-  "type": "object"
+  "description": "catalog/merchants/*.json → Merchant dizisi; catalog/fees/*.json → FeeRule dizisi; catalog/intermediaries.json → Intermediary dizisi. Doğrulama: npm run validate-catalog (src/catalog/validate.ts bu şemayla aynı kuralları uygular). Kalıplar (patterns) ASCII'ye katlanmış BÜYÜK HARFLİ açıklamaya karşı çalışan JavaScript regex'leridir: 'Ö' → 'O', 'İ' → 'I'.",
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "patterns": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 2 }
+    },
+    "merchant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "category", "patterns", "isSubscription", "verified"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "minLength": 1 },
+        "category": {
+          "enum": ["video", "music", "gaming", "software", "cloud", "telecom", "fitness", "news", "food-delivery", "transport", "other"]
+        },
+        "patterns": { "$ref": "#/$defs/patterns" },
+        "isSubscription": { "type": "boolean" },
+        "cancelUrl": { "type": "string", "pattern": "^https://" },
+        "cancelNote": { "type": "string", "minLength": 1 },
+        "verified": { "type": "boolean" },
+        "sources": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "feeRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "kind", "patterns", "explanation"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "label": { "type": "string", "minLength": 1 },
+        "kind": { "enum": ["fee", "tax", "interest"] },
+        "patterns": { "$ref": "#/$defs/patterns" },
+        "explanation": { "type": "string", "minLength": 1 }
+      }
+    },
+    "intermediary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "prefixes", "verified"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "minLength": 1 },
+        "prefixes": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "pattern": "^[A-Z0-9.]+$" }
+        },
+        "verified": { "type": "boolean" }
+      }
+    }
+  }
 }

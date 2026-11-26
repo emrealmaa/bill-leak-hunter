@@ -29,6 +29,7 @@ npm install
 | `npm test` | Testleri bir kez çalıştırır |
 | `npm run test:watch` | Testleri izleme modunda çalıştırır |
 | `node scripts/font-check.ts [--all-pages] <a.pdf> <b.pdf>` | İki ekstrenin font/glif yapısını karşılaştırır (yalnızca sayı yazdırır) |
+| `npm run validate-catalog` | `catalog/` dosyalarını şemaya göre doğrular (build'in ilk adımı) |
 | `npm run akbank-check -- [--table <glyphs.json>] <a.pdf> [<b.pdf> …]` | Gerçek Akbank ekstrelerinde tanıma + ayrıştırmayı dener (yalnızca sayı ve evet/hayır yazdırır) |
 | `npm run privacy-check [-- --history]` | Push öncesi gizlilik kontrolü: PDF, `private/blocklist.txt` ifadeleri, uzun rakamlar, mutlak yollar. `--history` tüm git geçmişini de tarar |
 
