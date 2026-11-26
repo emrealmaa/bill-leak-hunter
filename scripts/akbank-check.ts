@@ -65,11 +65,29 @@ const glyphMod = await load<GlyphModule>("/src/pdf/glyphs.ts");
 let candidates = registry.parsers;
 if (tablePath) {
   const tableMod = await load<TableModule>("/src/pdf/glyphTable.ts");
+  let text: string;
+  try {
+    text = await readFile(tablePath, "utf8");
+  } catch (err) {
+    fail(
+      (err as NodeJS.ErrnoException).code === "ENOENT"
+        ? "--table ile verilen glif tablosu bulunamadı. Önce `npm run dev` → #debug → Etiketleme modu → " +
+            "\"glyphs.json indir\" ile tabloyu private/glyphs.json olarak kaydedin."
+        : "--table ile verilen glif tablosu okunamadı.",
+    );
+  }
+  let data: unknown;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    fail("glif tablosu geçerli bir JSON değil.");
+  }
   let table: Map<string, string>;
   try {
-    table = tableMod.glyphTableFromData(JSON.parse(await readFile(tablePath, "utf8")));
-  } catch {
-    fail("glif tablosu okunamadı ya da biçimi geçersiz");
+    table = tableMod.glyphTableFromData(data);
+  } catch (err) {
+    // GlyphTableError mesajları içerik taşımaz (yalnızca biçim/sürüm bilgisi).
+    fail(`glif tablosu geçersiz: ${err instanceof Error && err.name === "GlyphTableError" ? err.message : "biçim tanınmadı."}`);
   }
   console.log(`Taslak tablo: ${table.size} glif`);
   candidates = check.withGlyphTable(candidates, "akbank", table);
