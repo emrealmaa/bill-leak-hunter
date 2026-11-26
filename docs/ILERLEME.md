@@ -17,6 +17,7 @@
 | 7 — Katalog | ✅ bitti | 81 satıcı, hepsi `verified: false`; `cancelUrl` yalnızca 6 kayıtta (emin olunanlar); `npm run validate-catalog` build'e bağlı |
 | 8 — Ücret ve vergi kuralları | ✅ bitti | 15 kural (`catalog/fees/`): ücretler, KKDF/BSMV/damga vergisi, faiz türleri; açıklamalar bilgilendirici |
 | 9 — Analiz motoru | ✅ sentetikle bitti · ⏳ gerçek ekstre kontrolü Emre'de | `src/analysis/`, uçtan uca hat `src/pipeline.ts`. Gerçek kontrol glif tablosunu bekliyor |
+| 10 — Arayüz | ✅ bitti · ⏳ "teknik olmayan biri anlıyor mu" denemesi Emre'de | Karşılama, işleniyor, hata, sonuç ekranları; TR/EN; DebugPage yalnızca `npm run dev` + `#debug` |
 
 ## Açık sorular
 
