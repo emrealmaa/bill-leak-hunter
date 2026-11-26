@@ -8,7 +8,7 @@ export const CHAR_WIDTH = 5;
  * - Hücreler en az iki boşlukla ayrılır; hücrenin x'i karakter konumundan gelir.
  *   Böylece sütun hizası, gerçek PDF'teki x konumlarını taklit eder.
  * - "--- sayfa N ---" satırı yeni sayfa başlatır.
- * - Boş satırlar atlanır.
+ * - Boş satırlar ve "# " ile başlayan açıklama satırları atlanır.
  */
 export function linesFromFixture(text: string): StatementLine[] {
   const out: StatementLine[] = [];
@@ -21,7 +21,7 @@ export function linesFromFixture(text: string): StatementLine[] {
       row = 0;
       continue;
     }
-    if (raw.trim() === "") continue;
+    if (raw.trim() === "" || raw.startsWith("# ")) continue;
     const cells: StatementLine["cells"] = [];
     for (const m of raw.matchAll(/\S+(?: \S+)*/g)) {
       cells.push({ text: m[0], x: m.index * CHAR_WIDTH, width: m[0].length * CHAR_WIDTH });

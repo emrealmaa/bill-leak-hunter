@@ -1,0 +1,35 @@
+# SENTETİK FIXTURE: Tamamen uydurmadır. Gerçek bir ekstreden kopyalanmış satır yoktur.
+# Sadece Akbank hesap özetinin YAPISINI taklit eder (sütunlar, satır tipleri).
+AKBANK T.A.Ş.                                                                             Axess
+Kredi Kartı Hesap Özeti
+AD SOYAD
+ÖRNEK MAH. TEST SOK. NO:1
+ÖRNEKİLÇE / ÖRNEKİL
+Kart Numarası             0000 **** **** 0000
+Müşteri Numarası          00000000
+Ekstre Dönemi             15/09/2026 - 14/10/2026
+Hesap Kesim Tarihi        14/10/2026
+Son Ödeme Tarihi          24/10/2026
+Önceki Dönem Borcu        1,000.00
+Dönem Borcu               1,898.65
+Asgari Ödeme Tutarı       759.46
+
+Hesap Özeti Detayları
+İşlem Tarihi  Dönem İçi İşlemler                            Borç Tutarı (TL)    Kalan Borç / Taksit    Dönem İçi Chip-para
+16/09/2026    ÖDEME - TEŞEKKÜR EDERİZ                           1,000.00 (-)
+AD SOYAD Harcamaları
+17/09/2026    ORNEK MARKET ISTANBUL TR                                125.50                                          1.25
+18/09/2026    NETFLIX.COM                                             229.99
+20/09/2026    IYZICO*ORNEK KITAP                                       89.90
+21/09/2026    ORNEK ELEKTRONIK                                        500.00    1,500.00  2/6
+22/09/2026    SPOTIFY P1234ABCD (orijinal tutar 5.99 $)               203.66
+25/09/2026    ORNEK GIYIM IADE                                    150.00 (-)
+30/09/2026    YILLIK KART ÜYELİK ÜCRETİ                               450.00
+30/09/2026    KKDF                                                     12.34
+30/09/2026    BSMV                                                      6.17
+30/09/2026    ALIŞVERİŞ FAİZİ                                          41.10
+--- sayfa 2 ---
+AKBANK T.A.Ş.                                                                             Axess
+İşlem Tarihi  Dönem İçi İşlemler                            Borç Tutarı (TL)    Kalan Borç / Taksit    Dönem İçi Chip-para
+05/10/2026    GETIR ORNEK                                             310.00
+10/10/2026    GOOGLE *YOUTUBE PREMIUM                                  79.99
