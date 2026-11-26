@@ -29,6 +29,7 @@ export interface Transaction {
   amount: number; // TL cinsinden; harcama pozitif, iade/ödeme negatif
   currency: string; // "TRY", "USD" ...
   originalAmount?: number; // yabancı para işlemlerinde orijinal tutar
+  intermediary?: string; // ödeme aracısı kimliği ("iyzico", "paytr" …), normalleştirici doldurur
   installment?: { current: number; total: number }; // taksit bilgisi varsa
   kind: "purchase" | "refund" | "payment" | "fee" | "tax" | "interest" | "other";
 }

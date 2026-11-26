@@ -1,0 +1,13 @@
+[
+  { "id": "iyzico", "name": "iyzico", "prefixes": ["IYZICO", "IYZ"], "verified": false },
+  { "id": "paytr", "name": "PayTR", "prefixes": ["PAYTR"], "verified": false },
+  { "id": "param", "name": "Param", "prefixes": ["PARAM"], "verified": false },
+  { "id": "payu", "name": "PayU", "prefixes": ["PAYU"], "verified": false },
+  { "id": "pay", "name": "PAY (genel ödeme aracısı öneki)", "prefixes": ["PAY"], "verified": false },
+  { "id": "paypal", "name": "PayPal", "prefixes": ["PAYPAL", "PP"], "verified": false },
+  { "id": "google", "name": "Google (Google Play / Google Pay)", "prefixes": ["GOOGLE"], "verified": false },
+  { "id": "paddle", "name": "Paddle", "prefixes": ["PADDLE.NET", "PADDLE"], "verified": false },
+  { "id": "fastspring", "name": "FastSpring", "prefixes": ["FS"], "verified": false },
+  { "id": "square", "name": "Square", "prefixes": ["SQ"], "verified": false },
+  { "id": "shopify", "name": "Shopify", "prefixes": ["SP"], "verified": false }
+]
