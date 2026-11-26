@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "privacy-check": "node scripts/privacy-check.ts"
+    "privacy-check": "node scripts/privacy-check.ts",
+    "akbank-check": "node scripts/akbank-check.ts"
   },
   "dependencies": {
     "pdfjs-dist": "6.5.438",
