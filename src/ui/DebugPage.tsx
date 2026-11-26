@@ -6,15 +6,17 @@ import type { GlyphTable } from "../pdf/glyphTable";
 import { formatDebugText } from "./formatDebugText";
 import { buildLabelLines } from "./labeling";
 import { LabelingPanel } from "./LabelingPanel";
+import { ParsedTransactions } from "./ParsedTransactions";
 import type { PdfPage } from "../types";
 
 type CopyStatus = "idle" | "copied" | "failed";
-type View = "raw" | "decoded" | "label";
+type View = "raw" | "decoded" | "label" | "parsed";
 
 const VIEWS: { id: View; label: string }[] = [
   { id: "raw", label: "Ham metin" },
   { id: "decoded", label: "Çözülmüş metin" },
   { id: "label", label: "Etiketleme modu" },
+  { id: "parsed", label: "Ayrıştırılmış işlemler" },
 ];
 
 // GEÇİCİ geliştirici sayfası: PDF'ten çıkan metni gösterir ve Type3 glif
@@ -180,7 +182,7 @@ export function DebugPage() {
             />
           </label>
         )}
-        {view !== "label" && (
+        {(view === "raw" || view === "decoded") && (
           <>
             <label className="flex items-center gap-2">
               <input type="checkbox" checked={showItems} onChange={(e) => setShowItems(e.target.checked)} />
@@ -231,7 +233,9 @@ export function DebugPage() {
         />
       )}
 
-      {view !== "label" &&
+      {session && view === "parsed" && <ParsedTransactions session={session} table={table} />}
+
+      {(view === "raw" || view === "decoded") &&
         linesByPage.map(({ page, lines }) => (
           <section key={page.pageNumber} className="mt-6">
             <h2 className="font-semibold">
