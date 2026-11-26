@@ -210,7 +210,7 @@ interface RecurringCharge {
   occurrences: Transaction[];
   monthlyEstimate: number;  // tahmini aylık tutar
   confidence: "high" | "medium" | "low";
-  reason: string;           // neden tekrarlayan sayıldığı ("katalogda abonelik", "3 ay üst üste" ...)
+  reason: "catalog-subscription" | "monthly" | "yearly" | "irregular"; // neden tekrarlayan sayıldığı (arayüz metne çevirir)
 }
 ```
 
