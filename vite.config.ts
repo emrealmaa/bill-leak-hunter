@@ -36,10 +36,17 @@ function cspPlugin(): Plugin {
   };
 }
 
-export default defineConfig({
+/**
+ * GitHub Pages adresi: https://<kullanıcı>.github.io/bill-leak-hunter/
+ * build ve `vite preview` bu alt yolu kullanır; geliştirme sunucusu kökte kalır.
+ */
+export const PAGES_BASE = "/bill-leak-hunter/";
+
+export default defineConfig(({ command, isPreview }) => ({
+  base: command === "build" || isPreview ? PAGES_BASE : "/",
   plugins: [react(), tailwindcss(), cspPlugin()],
   test: {
     include: ["tests/**/*.test.ts", "src/**/*.test.ts"],
     environment: "node",
   },
-});
+}));
