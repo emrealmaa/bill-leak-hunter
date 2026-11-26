@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sızıntı Avcısı katalog şeması",
+  "description": "Taslak. Satıcı (Merchant) ve ücret (FeeRule) kayıtlarının şeması Hafta 2'de yazılacak (PROJE.md §7, §11).",
+  "type": "object"
+}

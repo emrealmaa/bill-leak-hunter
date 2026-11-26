@@ -1,0 +1,8 @@
+# Tüm metin dosyaları repoda ve çalışma kopyasında LF
+* text=auto eol=lf
+
+# Fixture metinleri her durumda metin + LF (git binary sanmasın)
+tests/fixtures/**/*.txt text eol=lf
+
+# PDF'ler zaten ignore'da; yine de asla metin gibi işlenmesin
+*.pdf binary

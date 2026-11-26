@@ -1,0 +1,21 @@
+# Bağımlılıklar ve derleme çıktısı
+node_modules/
+dist/
+*.tsbuildinfo
+coverage/
+
+# Gerçek ekstreler ASLA commit edilmez (PROJE.md §10)
+*.pdf
+*.PDF
+private/
+
+# Ortam değişkenleri
+.env
+.env.*
+
+# Editör / işletim sistemi
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
