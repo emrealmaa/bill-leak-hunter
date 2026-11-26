@@ -12,6 +12,7 @@
 | 2 — Glif tablosu | ⏳ Emre bekleniyor | Etiketleme; `src/banks/akbank/glyphs.json` doldurulacak |
 | 3 — Ayrıştırıcı altyapısı | ✅ bitti | `StatementLine[]` girdisi, detect, tarih/tutar/para birimi yardımcıları |
 | 4 — Akbank detect + sentetik fixture | ✅ bitti · ⏳ fixture gözden geçirmesi Emre'de | `tests/fixtures/akbank/ornek-ekstre.txt`; boş glif tablosuyla "karakter tablosu eksik" hatası |
+| 5 — Akbank parse | ✅ sentetikle bitti · ⏳ gerçek doğrulama glif tablosunu bekliyor | `npm run akbank-check` iki gerçek ekstrede şu an `missing-glyph-table` diyor (beklenen). DebugPage'de "Ayrıştırılmış işlemler" sekmesi |
 
 ## Açık sorular
 
