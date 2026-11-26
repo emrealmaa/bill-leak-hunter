@@ -1,0 +1,30 @@
+[
+  {
+    "id": "alisveris-faizi",
+    "label": "Alışveriş faizi (akdi faiz)",
+    "kind": "interest",
+    "patterns": ["\\bALISVERIS ?FAIZ", "\\bAKDI ?FAIZ"],
+    "explanation": "Kart borcunun son ödeme tarihine kadar ödenmeyen kısmına işleyen faiz."
+  },
+  {
+    "id": "gecikme-faizi",
+    "label": "Gecikme faizi",
+    "kind": "interest",
+    "patterns": ["\\bGECIKME ?FAIZ", "\\bTEMERRUT ?FAIZ"],
+    "explanation": "Ödenmesi gereken tutar zamanında ödenmediğinde işleyen faiz."
+  },
+  {
+    "id": "nakit-avans-faizi",
+    "label": "Nakit avans faizi",
+    "kind": "interest",
+    "patterns": ["\\bNAKIT ?(AVANS|CEKIM) ?FAIZ"],
+    "explanation": "Kredi kartıyla çekilen nakde işleyen faiz."
+  },
+  {
+    "id": "faiz",
+    "label": "Faiz",
+    "kind": "interest",
+    "patterns": ["\\bFAIZ(I|LERI)?\\b"],
+    "explanation": "Banka tarafından işletilen faiz. Türü işlem açıklamasında yazar."
+  }
+]

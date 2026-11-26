@@ -1,0 +1,23 @@
+[
+  {
+    "id": "kkdf",
+    "label": "KKDF (Kaynak Kullanımını Destekleme Fonu)",
+    "kind": "tax",
+    "patterns": ["\\bKKDF\\b", "\\bKAYNAK ?KULLANIMINI ?DESTEKLEME"],
+    "explanation": "Kredi ve kredi kartı faizleri üzerinden alınan yasal fon kesintisi. Genellikle bir faiz kalemiyle birlikte görünür."
+  },
+  {
+    "id": "bsmv",
+    "label": "BSMV (Banka ve Sigorta Muameleleri Vergisi)",
+    "kind": "tax",
+    "patterns": ["\\bBSMV\\b", "\\bBANKA ?(VE )?SIGORTA ?MUAMELE"],
+    "explanation": "Bankaların faiz, ücret ve komisyon gibi gelirleri üzerinden alınan vergi. Genellikle bir faiz ya da ücret kalemiyle birlikte görünür."
+  },
+  {
+    "id": "damga-vergisi",
+    "label": "Damga vergisi",
+    "kind": "tax",
+    "patterns": ["\\bDAMGA ?VERGI"],
+    "explanation": "Bazı sözleşme ve belgeler için alınan vergi."
+  }
+]

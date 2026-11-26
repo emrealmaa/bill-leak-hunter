@@ -1,0 +1,62 @@
+[
+  {
+    "id": "kart-aidati",
+    "label": "Kart aidatı",
+    "kind": "fee",
+    "patterns": [
+      "\\bKART ?(UYELIK ?)?(AIDAT|UCRET)",
+      "\\bYILLIK ?(KART ?)?(UYELIK ?)?(AIDAT|UCRET)",
+      "\\bUYELIK ?(AIDAT|UCRET)"
+    ],
+    "explanation": "Kredi kartının yıllık ya da dönemsel üyelik ücreti. Ücretin tutarı ve koşulları kart sözleşmesinde ve bankanın ücret tablosunda yazar."
+  },
+  {
+    "id": "hesap-isletim-ucreti",
+    "label": "Hesap işletim ücreti",
+    "kind": "fee",
+    "patterns": ["\\bHESAP ?ISLETIM"],
+    "explanation": "Banka hesabının işletilmesi için dönemsel olarak alınan ücret."
+  },
+  {
+    "id": "nakit-avans-ucreti",
+    "label": "Nakit avans ücreti",
+    "kind": "fee",
+    "patterns": ["\\bNAKIT ?(AVANS|CEKIM) ?(ISLEM ?)?(UCRET|KOMISYON)"],
+    "explanation": "Kredi kartıyla nakit çekildiğinde alınan ücret. Nakit avansa ayrıca faiz de işleyebilir."
+  },
+  {
+    "id": "ekstre-ucreti",
+    "label": "Ekstre ücreti",
+    "kind": "fee",
+    "patterns": ["\\b(EKSTRE|HESAP OZETI) ?(GONDERIM ?)?(UCRET|MASRAF)"],
+    "explanation": "Hesap özetinin gönderimi için alınan ücret."
+  },
+  {
+    "id": "sms-ucreti",
+    "label": "SMS bilgilendirme ücreti",
+    "kind": "fee",
+    "patterns": ["\\bSMS ?(BILGILENDIRME ?)?(UCRET|HIZMET)"],
+    "explanation": "İşlem bilgilendirme mesajları için alınan ücret."
+  },
+  {
+    "id": "yurt-disi-islem-ucreti",
+    "label": "Yurt dışı işlem ücreti",
+    "kind": "fee",
+    "patterns": ["\\bYURT ?DISI ?(ISLEM|KULLANIM|HARCAMA) ?(UCRET|KOMISYON|MASRAF)"],
+    "explanation": "Yabancı para birimiyle ya da yurt dışında yapılan işlemlerde alınan ek ücret."
+  },
+  {
+    "id": "transfer-ucreti",
+    "label": "Para transferi ücreti",
+    "kind": "fee",
+    "patterns": ["\\b(EFT|HAVALE|FAST) ?(ISLEM ?)?(UCRET|MASRAF|KOMISYON)"],
+    "explanation": "EFT, havale ya da FAST ile para gönderimi için alınan ücret."
+  },
+  {
+    "id": "gecikme-ucreti",
+    "label": "Gecikme ücreti",
+    "kind": "fee",
+    "patterns": ["\\bGEC ?ODEME ?(UCRET|MASRAF)", "\\bGECIKME ?(UCRET|MASRAF)"],
+    "explanation": "Ödemenin son ödeme tarihinden sonra yapılması nedeniyle alınan ücret."
+  }
+]
