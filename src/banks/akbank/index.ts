@@ -2,6 +2,7 @@ import { glyphTableFromData } from "../../pdf/glyphTable";
 import type { BankParser } from "../types";
 import { detectAkbank } from "./detect";
 import glyphData from "./glyphs.json" with { type: "json" };
+import { parseAkbank } from "./parse";
 
 /**
  * Akbank (Axess) kredi kartı hesap özeti.
@@ -13,6 +14,5 @@ export const akbankParser: BankParser = {
   displayName: "Akbank (Axess)",
   glyphTable: glyphTableFromData(glyphData),
   detect: detectAkbank,
-  // Aşama 5'te yazılacak.
-  parse: () => ({ transactions: [], warnings: [] }),
+  parse: parseAkbank,
 };
