@@ -1,12 +1,25 @@
-import { StrictMode } from "react";
+import { lazy, StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { DebugPage } from "./ui/DebugPage";
+import { App } from "./ui/App";
 
-// Geçici: banka formatını incelemek için ham metin sayfası.
-// Gerçek sonuç ekranı Hafta 3'te bunun yerini alacak.
+// Geliştirici sayfası (etiketleme, ham metin) yalnızca `npm run dev` ile ve
+// adres #debug ile açılır. Üretim build'inde import.meta.env.DEV false olduğu
+// için bu dal ve DebugPage paketin içine hiç girmez.
+const DebugPage = import.meta.env.DEV
+  ? lazy(() => import("./ui/DebugPage").then((mod) => ({ default: mod.DebugPage })))
+  : null;
+
+const showDebug = DebugPage !== null && window.location.hash === "#debug";
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <DebugPage />
+    {showDebug && DebugPage ? (
+      <Suspense fallback={null}>
+        <DebugPage />
+      </Suspense>
+    ) : (
+      <App />
+    )}
   </StrictMode>,
 );

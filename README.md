@@ -23,7 +23,7 @@ npm install
 
 | Komut | Ne yapar |
 |---|---|
-| `npm run dev` | Geliştirme sunucusunu başlatır |
+| `npm run dev` | Geliştirme sunucusunu başlatır (geliştirici sayfası: adrese `#debug` ekle) |
 | `npm run build` | Tip kontrolü yapar ve `dist/` içine statik derleme alır |
 | `npm run preview` | Derlenmiş sürümü yerelde sunar |
 | `npm test` | Testleri bir kez çalıştırır |

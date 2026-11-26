@@ -1,0 +1,122 @@
+import type { Messages } from "./tr";
+
+// English UI strings. Catalog texts (fee explanations) are Turkish for now.
+export const en: Messages = {
+  locale: "en-US",
+  appName: "Leak Hunter",
+  language: { label: "Language", tr: "Türkçe", en: "English" },
+  welcome: {
+    tagline: "Upload your credit card statement and see where money slips away every month.",
+    bullets: [
+      "Subscriptions and regularly recurring payments",
+      "Bank fees, taxes and interest",
+      "Remaining installments and unrecognized lines",
+    ],
+    privacyTitle: "Your statement never leaves your device.",
+    privacyBody:
+      "The PDF is read entirely in your browser. No server, account, cookies or tracking. It even works offline.",
+    dropTitle: "Drop your statement PDF here",
+    dropHint: "or click to choose",
+    supportedBanks: "Supported banks",
+    notAdvice: "Results are for information only; they are not financial or legal advice.",
+  },
+  processing: { title: "Reading statement…", body: "This may take a few seconds. Data stays on your device." },
+  errors: {
+    title: "Could not process the statement",
+    retry: "Try another file",
+    "not-pdf": "Please choose a PDF file.",
+    encrypted: "Could not read the PDF (it may be encrypted).",
+    invalid: "This file does not look like a valid PDF.",
+    unknown: "An unexpected error occurred while reading the PDF.",
+    "unsupported-bank": "This bank is not supported yet.",
+    "missing-glyph-table":
+      "The character table for this statement is missing. The bank's PDF uses a non-copyable font that has not been mapped yet.",
+    "no-transactions": "No transactions found in the statement.",
+  },
+  results: {
+    title: "Results",
+    period: "Period: {start} – {end}",
+    transactionCount: "{count} transactions",
+    newStatement: "Upload another statement",
+    downloadCsv: "Download CSV",
+    warnings: "{count} lines could not be read; results may be incomplete.",
+    unknownGlyphs: "{count} characters could not be decoded; some descriptions may be incomplete.",
+    cards: {
+      monthlyRecurring: "Monthly recurring",
+      fees: "Fees, taxes and interest",
+      unknown: "Unrecognized lines",
+    },
+    subscriptions: {
+      title: "Subscriptions and recurring payments",
+      empty: "No subscriptions or regularly recurring payments in this statement.",
+      name: "Name",
+      category: "Category",
+      monthly: "Monthly (est.)",
+      confidence: "Confidence",
+      cancel: "Cancel / manage",
+      cancelLink: "Account page",
+      count: "{count} transactions",
+    },
+    review: {
+      title: "Worth a look",
+      intro: "Payments with similar amounts that repeat at irregular intervals. They may be subscriptions.",
+    },
+    fees: {
+      title: "Bank fees, taxes and interest",
+      empty: "No fee, tax or interest lines in this statement.",
+      other: { fee: "Other bank fee", tax: "Other tax", interest: "Other interest" },
+    },
+    installments: {
+      title: "Remaining installments",
+      empty: "No installment purchases.",
+      progress: "Installment {current}/{total}",
+      remaining: "{count} left · about {amount}",
+    },
+    unknown: {
+      title: "Unrecognized lines",
+      intro: "Purchases that are not in the catalog and do not repeat. We do not guess.",
+      contribute: "Know this merchant? Add it to the catalog",
+      empty: "No unrecognized lines.",
+    },
+    known: {
+      title: "Other recognized purchases",
+    },
+  },
+  confidence: { high: "High", medium: "Medium", low: "Low" },
+  reason: {
+    "catalog-subscription": "Subscription in catalog",
+    monthly: "Similar amount every month",
+    yearly: "Similar amount every year",
+    irregular: "Similar amount, irregular interval",
+  },
+  category: {
+    video: "Video",
+    music: "Music and audiobooks",
+    gaming: "Gaming",
+    software: "Software and AI",
+    cloud: "Cloud",
+    telecom: "Telecom",
+    fitness: "Fitness",
+    news: "News and content",
+    "food-delivery": "Food delivery",
+    transport: "Transport",
+    other: "Other",
+    unknown: "Unknown",
+  },
+  csv: {
+    fileName: "leak-hunter-results.csv",
+    headers: ["Section", "Date", "Description", "Name", "Category", "Amount (TRY)", "Monthly est. (TRY)", "Confidence", "Note"],
+    sections: {
+      subscription: "Subscription",
+      review: "Worth a look",
+      fee: "Fee/tax/interest",
+      installment: "Installment",
+      unknown: "Unrecognized",
+      known: "Recognized",
+    },
+  },
+  footer: {
+    source: "Open source",
+    noTracking: "No tracking · no cookies · no server",
+  },
+};
