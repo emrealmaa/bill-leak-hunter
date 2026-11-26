@@ -1,0 +1,124 @@
+[
+  {
+    "id": "netflix",
+    "name": "Netflix",
+    "category": "video",
+    "patterns": ["\\bNETFLIX"],
+    "isSubscription": true,
+    "cancelUrl": "https://www.netflix.com/cancelplan",
+    "verified": false
+  },
+  {
+    "id": "youtube",
+    "name": "YouTube Premium / Music",
+    "category": "video",
+    "patterns": ["\\bYOUTUBE"],
+    "isSubscription": true,
+    "cancelUrl": "https://www.youtube.com/paid_memberships",
+    "verified": false
+  },
+  {
+    "id": "disney-plus",
+    "name": "Disney+",
+    "category": "video",
+    "patterns": ["\\bDISNEY ?(PLUS|\\+)", "\\bDISNEYPLUS"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "amazon-prime",
+    "name": "Amazon Prime",
+    "category": "video",
+    "patterns": ["\\b(AMAZON|AMZN) ?PRIME", "\\bPRIME ?VIDEO"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "hbo-max",
+    "name": "HBO Max / BluTV",
+    "category": "video",
+    "patterns": ["\\bHBO ?MAX", "\\bBLU ?TV\\b"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "exxen",
+    "name": "Exxen",
+    "category": "video",
+    "patterns": ["\\bEXXEN"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "gain",
+    "name": "GAİN",
+    "category": "video",
+    "patterns": ["\\bGAIN ?(MEDYA|TV)\\b", "^GAIN$"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "tod",
+    "name": "TOD (beIN)",
+    "category": "video",
+    "patterns": ["\\bTOD ?TV\\b", "^TOD$", "\\bBEIN ?CONNECT"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "digiturk",
+    "name": "Digiturk",
+    "category": "video",
+    "patterns": ["\\bDIGITURK"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "d-smart",
+    "name": "D-Smart",
+    "category": "video",
+    "patterns": ["\\bD-? ?SMART\\b"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "tabii",
+    "name": "tabii",
+    "category": "video",
+    "patterns": ["\\bTABII\\b"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "tivibu",
+    "name": "Tivibu",
+    "category": "video",
+    "patterns": ["\\bTIVIBU"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "tv-plus",
+    "name": "TV+",
+    "category": "video",
+    "patterns": ["\\bTV ?\\+", "\\bTVPLUS\\b"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "mubi",
+    "name": "MUBI",
+    "category": "video",
+    "patterns": ["\\bMUBI\\b"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "twitch",
+    "name": "Twitch",
+    "category": "video",
+    "patterns": ["\\bTWITCH"],
+    "isSubscription": true,
+    "verified": false
+  }
+]

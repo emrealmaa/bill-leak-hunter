@@ -1,0 +1,66 @@
+[
+  {
+    "id": "steam",
+    "name": "Steam",
+    "category": "gaming",
+    "patterns": ["\\bSTEAM ?(GAMES|POWERED|PURCHASE)\\b", "^STEAM$", "\\bSTEAMGAMES"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "playstation",
+    "name": "PlayStation Store / PS Plus",
+    "category": "gaming",
+    "patterns": ["\\bPLAYSTATION", "\\bSONY ?(INTERACTIVE|NETWORK)", "\\bPSN\\b"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "xbox",
+    "name": "Xbox / Game Pass",
+    "category": "gaming",
+    "patterns": ["\\bXBOX", "\\bGAME ?PASS"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "epic-games",
+    "name": "Epic Games",
+    "category": "gaming",
+    "patterns": ["\\bEPIC ?GAMES"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "nintendo",
+    "name": "Nintendo",
+    "category": "gaming",
+    "patterns": ["\\bNINTENDO"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "riot-games",
+    "name": "Riot Games",
+    "category": "gaming",
+    "patterns": ["\\bRIOT ?GAMES"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "roblox",
+    "name": "Roblox",
+    "category": "gaming",
+    "patterns": ["\\bROBLOX"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "discord",
+    "name": "Discord Nitro",
+    "category": "gaming",
+    "patterns": ["\\bDISCORD"],
+    "isSubscription": true,
+    "verified": false
+  }
+]

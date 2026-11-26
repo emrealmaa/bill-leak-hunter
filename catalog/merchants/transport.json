@@ -1,0 +1,34 @@
+[
+  {
+    "id": "uber",
+    "name": "Uber",
+    "category": "transport",
+    "patterns": ["\\bUBER\\b"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "bitaksi",
+    "name": "BiTaksi",
+    "category": "transport",
+    "patterns": ["\\bBI ?TAKSI"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "marti",
+    "name": "Martı",
+    "category": "transport",
+    "patterns": ["\\bMARTI ?(TEKNOLOJI|TAG|SCOOTER)\\b", "^MARTI$"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "binbin",
+    "name": "BinBin",
+    "category": "transport",
+    "patterns": ["\\bBINBIN"],
+    "isSubscription": false,
+    "verified": false
+  }
+]

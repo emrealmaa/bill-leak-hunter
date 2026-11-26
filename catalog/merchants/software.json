@@ -1,0 +1,183 @@
+[
+  {
+    "id": "apple",
+    "name": "Apple (App Store, iCloud+, Apple Music …)",
+    "category": "software",
+    "patterns": ["\\bAPPLE\\.COM ?/ ?BILL", "\\bITUNES"],
+    "isSubscription": true,
+    "cancelNote": "iPhone'da Ayarlar > adınız > Abonelikler bölümünden yönetilir.",
+    "verified": false
+  },
+  {
+    "id": "microsoft-365",
+    "name": "Microsoft 365",
+    "category": "software",
+    "patterns": ["\\b(MICROSOFT|MSFT|OFFICE) ?365"],
+    "isSubscription": true,
+    "cancelUrl": "https://account.microsoft.com/services",
+    "verified": false
+  },
+  {
+    "id": "microsoft",
+    "name": "Microsoft",
+    "category": "software",
+    "patterns": ["\\bMICROSOFT", "\\bMSFT\\b"],
+    "isSubscription": false,
+    "cancelUrl": "https://account.microsoft.com/services",
+    "verified": false
+  },
+  {
+    "id": "adobe",
+    "name": "Adobe",
+    "category": "software",
+    "patterns": ["\\bADOBE"],
+    "isSubscription": true,
+    "cancelUrl": "https://account.adobe.com/plans",
+    "verified": false
+  },
+  {
+    "id": "canva",
+    "name": "Canva",
+    "category": "software",
+    "patterns": ["\\bCANVA\\b"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "notion",
+    "name": "Notion",
+    "category": "software",
+    "patterns": ["\\bNOTION ?(LABS|\\.SO)?\\b"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "figma",
+    "name": "Figma",
+    "category": "software",
+    "patterns": ["\\bFIGMA"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "category": "software",
+    "patterns": ["\\bGITHUB"],
+    "isSubscription": true,
+    "cancelUrl": "https://github.com/settings/billing",
+    "verified": false
+  },
+  {
+    "id": "jetbrains",
+    "name": "JetBrains",
+    "category": "software",
+    "patterns": ["\\bJETBRAINS"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "openai",
+    "name": "ChatGPT (OpenAI)",
+    "category": "software",
+    "patterns": ["\\bOPENAI", "\\bCHATGPT"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "anthropic",
+    "name": "Claude (Anthropic)",
+    "category": "software",
+    "patterns": ["\\bANTHROPIC", "\\bCLAUDE\\.AI"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "midjourney",
+    "name": "Midjourney",
+    "category": "software",
+    "patterns": ["\\bMIDJOURNEY"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "perplexity",
+    "name": "Perplexity",
+    "category": "software",
+    "patterns": ["\\bPERPLEXITY"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "category": "software",
+    "patterns": ["\\bCURSOR ?(AI|\\.COM|\\.SH|USAGE)\\b", "^CURSOR$"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "grammarly",
+    "name": "Grammarly",
+    "category": "software",
+    "patterns": ["\\bGRAMMARLY"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "zoom",
+    "name": "Zoom",
+    "category": "software",
+    "patterns": ["\\bZOOM\\.(US|COM)", "\\bZOOM ?VIDEO"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "linkedin",
+    "name": "LinkedIn Premium",
+    "category": "software",
+    "patterns": ["\\bLINKEDIN"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "duolingo",
+    "name": "Duolingo",
+    "category": "software",
+    "patterns": ["\\bDUOLINGO"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "nordvpn",
+    "name": "NordVPN",
+    "category": "software",
+    "patterns": ["\\bNORD ?VPN", "\\bNORDSEC"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "expressvpn",
+    "name": "ExpressVPN",
+    "category": "software",
+    "patterns": ["\\bEXPRESS ?VPN"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "proton",
+    "name": "Proton (Mail, VPN, Drive)",
+    "category": "software",
+    "patterns": ["\\bPROTON ?(AG|MAIL|VPN|DRIVE)\\b", "\\bPROTONMAIL"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "1password",
+    "name": "1Password",
+    "category": "software",
+    "patterns": ["\\b1PASSWORD"],
+    "isSubscription": true,
+    "verified": false
+  }
+]

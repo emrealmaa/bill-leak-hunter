@@ -1,0 +1,66 @@
+[
+  {
+    "id": "spotify",
+    "name": "Spotify",
+    "category": "music",
+    "patterns": ["\\bSPOTIFY"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "deezer",
+    "name": "Deezer",
+    "category": "music",
+    "patterns": ["\\bDEEZER"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "tidal",
+    "name": "TIDAL",
+    "category": "music",
+    "patterns": ["\\bTIDAL\\b"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "fizy",
+    "name": "fizy",
+    "category": "music",
+    "patterns": ["\\bFIZY\\b"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "muud",
+    "name": "Muud",
+    "category": "music",
+    "patterns": ["\\bMUUD\\b"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "soundcloud",
+    "name": "SoundCloud",
+    "category": "music",
+    "patterns": ["\\bSOUNDCLOUD"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "storytel",
+    "name": "Storytel",
+    "category": "music",
+    "patterns": ["\\bSTORYTEL"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "audible",
+    "name": "Audible",
+    "category": "music",
+    "patterns": ["\\bAUDIBLE"],
+    "isSubscription": true,
+    "verified": false
+  }
+]

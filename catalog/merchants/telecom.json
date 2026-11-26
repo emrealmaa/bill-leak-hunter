@@ -1,0 +1,42 @@
+[
+  {
+    "id": "turkcell",
+    "name": "Turkcell",
+    "category": "telecom",
+    "patterns": ["\\bTURKCELL"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "vodafone",
+    "name": "Vodafone",
+    "category": "telecom",
+    "patterns": ["\\bVODAFONE"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "turk-telekom",
+    "name": "Türk Telekom",
+    "category": "telecom",
+    "patterns": ["\\bTURK ?TELEKOM", "\\bTT ?MOBIL", "\\bTTNET"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "superonline",
+    "name": "Superonline",
+    "category": "telecom",
+    "patterns": ["\\bSUPERONLINE"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "turknet",
+    "name": "TurkNet",
+    "category": "telecom",
+    "patterns": ["\\bTURKNET"],
+    "isSubscription": true,
+    "verified": false
+  }
+]

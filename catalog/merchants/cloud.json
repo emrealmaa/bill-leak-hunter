@@ -1,0 +1,42 @@
+[
+  {
+    "id": "google-one",
+    "name": "Google One",
+    "category": "cloud",
+    "patterns": ["\\bGOOGLE ?ONE\\b", "\\bGOOGLE ?STORAGE"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "dropbox",
+    "name": "Dropbox",
+    "category": "cloud",
+    "patterns": ["\\bDROPBOX"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "aws",
+    "name": "Amazon Web Services",
+    "category": "cloud",
+    "patterns": ["\\bAWS\\b", "\\bAMAZON ?WEB ?SERVICES"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "google-cloud",
+    "name": "Google Cloud",
+    "category": "cloud",
+    "patterns": ["\\bGOOGLE ?CLOUD", "\\bGCP\\b"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "digitalocean",
+    "name": "DigitalOcean",
+    "category": "cloud",
+    "patterns": ["\\bDIGITAL ?OCEAN"],
+    "isSubscription": false,
+    "verified": false
+  }
+]

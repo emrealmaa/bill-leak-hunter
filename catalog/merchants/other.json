@@ -1,0 +1,34 @@
+[
+  {
+    "id": "hepsiburada-premium",
+    "name": "Hepsiburada Premium",
+    "category": "other",
+    "patterns": ["\\bHEPSIBURADA ?PREMIUM", "\\bHEPSI ?PREMIUM"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "amazon",
+    "name": "Amazon",
+    "category": "other",
+    "patterns": ["\\bAMAZON", "\\bAMZN"],
+    "isSubscription": false,
+    "verified": false
+  },
+  {
+    "id": "tinder",
+    "name": "Tinder",
+    "category": "other",
+    "patterns": ["\\bTINDER"],
+    "isSubscription": true,
+    "verified": false
+  },
+  {
+    "id": "bumble",
+    "name": "Bumble",
+    "category": "other",
+    "patterns": ["\\bBUMBLE"],
+    "isSubscription": true,
+    "verified": false
+  }
+]
