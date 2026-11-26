@@ -12,8 +12,18 @@ server, account, database, cookie or tracking script. It even works offline.
 
 > Early development. Design: [PROJE.md](PROJE.md) (Turkish) · plan: [docs/YOL_HARITASI.md](docs/YOL_HARITASI.md) · status: [docs/ILERLEME.md](docs/ILERLEME.md)
 
-<!-- SCREENSHOT: to be taken with synthetic data (never a real statement). -->
-_Screenshot coming soon (synthetic data)._
+<!-- Screenshots use SYNTHETIC data only (tests/fixtures), never a real statement. -->
+<p>
+  <img src="docs/images/sonuc-masaustu.png" alt="Results screen with synthetic data: monthly recurring total, fees, subscriptions" width="640" />
+  <img src="docs/images/sonuc-mobil.png" alt="Results screen on mobile (synthetic data)" width="200" />
+</p>
+
+<details>
+<summary>Welcome screen</summary>
+<img src="docs/images/karsilama-masaustu.png" alt="Welcome screen with privacy note and drop zone" width="640" />
+</details>
+
+_Screenshots show a synthetic sample statement, not real data._
 
 ## What it does
 

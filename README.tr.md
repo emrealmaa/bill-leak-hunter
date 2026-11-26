@@ -12,8 +12,18 @@ abonelikler, düzenli tekrarlayan ödemeler, banka ücretleri, vergiler, faizler
 
 > Proje erken geliştirme aşamasında. Ayrıntılı tasarım: [PROJE.md](PROJE.md) · plan: [docs/YOL_HARITASI.md](docs/YOL_HARITASI.md) · durum: [docs/ILERLEME.md](docs/ILERLEME.md)
 
-<!-- EKRAN GÖRÜNTÜSÜ: sentetik veriyle alınacak (gerçek ekstre değil). -->
-_Ekran görüntüsü yakında (sentetik veriyle)._
+<!-- Ekran görüntüleri YALNIZCA sentetik veriyle (tests/fixtures) alınır, gerçek ekstreyle asla. -->
+<p>
+  <img src="docs/images/sonuc-masaustu.png" alt="Sentetik veriyle sonuç ekranı: aylık tekrarlayan toplam, ücretler, abonelikler" width="640" />
+  <img src="docs/images/sonuc-mobil.png" alt="Mobilde sonuç ekranı (sentetik veri)" width="200" />
+</p>
+
+<details>
+<summary>Karşılama ekranı</summary>
+<img src="docs/images/karsilama-masaustu.png" alt="Gizlilik notu ve sürükle-bırak alanıyla karşılama ekranı" width="640" />
+</details>
+
+_Görüntülerde gerçek veri yok; uydurma bir örnek ekstre kullanıldı._
 
 ## Ne yapar?
 
