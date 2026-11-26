@@ -1,4 +1,5 @@
 import type { StatementLine } from "../../src/banks/types";
+import type { PdfPage } from "../../src/types";
 
 /** Fixture'daki bir karakter sütununun PDF birimindeki genişliği. */
 export const CHAR_WIDTH = 5;
@@ -36,4 +37,15 @@ export function linesFromFixture(text: string): StatementLine[] {
     row++;
   }
   return out;
+}
+
+/** Fixture satırlarını pdf.js'ten gelmiş gibi normal fontlu sayfalara çevirir. */
+export function pagesFromFixture(text: string): PdfPage[] {
+  const pages = new Map<number, PdfPage>();
+  for (const line of linesFromFixture(text)) {
+    const page = pages.get(line.page) ?? { pageNumber: line.page, width: 700, height: 842, items: [] };
+    for (const c of line.cells) page.items.push({ str: c.text, x: c.x, y: line.y, width: c.width, height: 8 });
+    pages.set(line.page, page);
+  }
+  return [...pages.values()];
 }

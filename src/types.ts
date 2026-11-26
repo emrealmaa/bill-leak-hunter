@@ -79,7 +79,38 @@ export interface RecurringCharge {
   occurrences: Transaction[];
   monthlyEstimate: number; // tahmini aylık tutar
   confidence: "high" | "medium" | "low";
-  reason: string; // neden tekrarlayan sayıldığı ("katalogda abonelik", "3 ay üst üste" ...)
+  reason: RecurringReason; // neden tekrarlayan sayıldığı; arayüz metne çevirir
+}
+
+// "catalog-subscription": katalogda abonelik · "monthly": aylık düzenli · "yearly": yıllık
+// "irregular": benzer tutarlı ama düzensiz aralıklı (kontrol et)
+export type RecurringReason = "catalog-subscription" | "monthly" | "yearly" | "irregular";
+
+export interface FeeGroup {
+  rule?: FeeRule; // kural bulunamadıysa ayrıştırıcının verdiği türe göre gruplanır
+  kind: "fee" | "tax" | "interest";
+  transactions: Transaction[];
+  total: number;
+}
+
+export interface InstallmentItem {
+  transaction: Transaction;
+  remainingCount: number; // kalan taksit sayısı (bu ay hariç)
+  remainingAmount: number; // kalan taksit sayısı × taksit tutarı (tahmini)
+}
+
+export interface AnalysisResult {
+  subscriptions: RecurringCharge[]; // high + medium
+  review: RecurringCharge[]; // low: "kontrol et"
+  fees: FeeGroup[];
+  installments: InstallmentItem[];
+  unknown: Transaction[]; // katalogda olmayan, tekrarlamayan harcamalar
+  known: Transaction[]; // katalogda olan ama abonelik/tekrar olmayan harcamalar
+  totals: {
+    monthlyRecurring: number;
+    fees: number;
+    unknownCount: number;
+  };
 }
 
 // --- Banka ayrıştırıcısı ---
