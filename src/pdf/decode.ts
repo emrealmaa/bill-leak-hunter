@@ -1,6 +1,6 @@
 import type { PdfTextItem } from "../types";
 import type { PositionedGlyph } from "./glyphs";
-import type { GlyphTable } from "./glyphTable";
+import type { ReadonlyGlyphTable } from "./glyphTable";
 
 export const UNKNOWN_CHAR = "�"; // "�" (bilerek; bozuk karakter değil)
 /*
@@ -21,7 +21,7 @@ export interface DecodeOptions {
 }
 
 /** Bir glifin karakteri: Type3 ise tablodan, değilse pdf.js'in Unicode'u. */
-export function glyphChar(g: PositionedGlyph, table: GlyphTable): string {
+export function glyphChar(g: PositionedGlyph, table: ReadonlyGlyphTable): string {
   if (g.hash === null) return g.unicode;
   return table.get(g.hash) ?? UNKNOWN_CHAR;
 }
@@ -46,7 +46,7 @@ export function needsSpace(a: PositionedGlyph, b: PositionedGlyph, spaceThreshol
  */
 export function decodeGlyphs(
   glyphs: readonly PositionedGlyph[],
-  table: GlyphTable,
+  table: ReadonlyGlyphTable,
   { spaceThreshold = DEFAULT_SPACE_THRESHOLD, columnGap = DEFAULT_COLUMN_GAP }: DecodeOptions = {},
 ): PdfTextItem[] {
   const items: PdfTextItem[] = [];

@@ -6,6 +6,7 @@ import { GLYPH_HASH_VERSION } from "./glyphs";
  * Dosyada başka HİÇBİR alan olmaz (satır metni, konum, tarih vb. yok).
  */
 export type GlyphTable = Map<string, string>;
+export type ReadonlyGlyphTable = ReadonlyMap<string, string>;
 
 export class GlyphTableError extends Error {
   constructor(message: string) {
@@ -33,6 +34,11 @@ export function parseGlyphTable(text: string): GlyphTable {
   } catch {
     throw new GlyphTableError("Dosya geçerli bir JSON değil.");
   }
+  return glyphTableFromData(data);
+}
+
+/** JSON olarak okunmuş tablo verisini doğrular ve tabloya çevirir. */
+export function glyphTableFromData(data: unknown): GlyphTable {
   if (!data || typeof data !== "object" || Array.isArray(data)) {
     throw new GlyphTableError("Dosya biçimi tanınmadı.");
   }

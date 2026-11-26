@@ -1,3 +1,4 @@
+import { akbankParser } from "./akbank";
 import type { BankParser } from "./types";
 
 /**
@@ -5,4 +6,4 @@ import type { BankParser } from "./types";
  * aktarıp bu listeye tek satır eklemek yeterlidir. Sıra önemlidir: detect
  * sırayla denenir, ilk eşleşen kazanır.
  */
-export const parsers: readonly BankParser[] = [];
+export const parsers: readonly BankParser[] = [akbankParser];
