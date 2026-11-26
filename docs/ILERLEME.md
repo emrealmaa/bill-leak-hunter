@@ -38,6 +38,10 @@
 9. ~~Lisansı seç (öneri: MIT).~~ ✅ MIT seçildi, `LICENSE` eklendi.
 10. ~~Sentetik veriyle ekran görüntüsü al (README'lerdeki yer tutucu için).~~ ✅ `docs/images/` (masaüstü karşılama, masaüstü ve mobil sonuç).
 
+## Kararlar
+
+- Glif hash'i `hashVersion: 1` olarak kalıyor. Font bazında normalize denendi, 431→~428, değmez. Gerekirse v1→v2 etiket taşıma mümkün (aynı PDF'ten iki hash de hesaplanabilir).
+
 ## Açık sorular
 
 - Sentetik fixture'ın sütun düzeni ve satır tipleri (özellikle "Kalan Borç / Taksit" sütununun içeriği ve yabancı para ekinin yazılışı) gerçek ekstreyi görmeden tahminle yazıldı. Glif tablosu bitince `akbank-check` sayıları buna göre ayrıştırıcıda düzeltme gerekip gerekmediğini gösterecek.

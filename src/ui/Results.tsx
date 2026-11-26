@@ -45,23 +45,26 @@ function ChargeList({ charges, m }: { charges: RecurringCharge[]; m: Messages })
     <ul className="divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white">
       {charges.map((c) => (
         <li key={`${c.merchant?.id ?? c.label}`} className="flex flex-wrap items-center gap-x-4 gap-y-2 p-4">
-          <div className="min-w-0 flex-1 basis-56">
+          <div className="min-w-0 flex-1 basis-40 sm:basis-56">
             <p className="font-medium text-slate-900">{c.label}</p>
             <p className="text-sm text-slate-600">
               {m.category[c.merchant?.category ?? "unknown"]} · {m.reason[c.reason]} ·{" "}
               {format(s.count, { count: c.occurrences.length })}
             </p>
           </div>
-          <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${CONFIDENCE_STYLE[c.confidence]}`}>
+          {/* Mobilde satır kırıcı: rozet ve iptal bağlantısı ismin ve tutarın altına iner. */}
+          <span aria-hidden="true" className="order-1 -my-1 h-0 basis-full sm:hidden" />
+          <span className={`order-2 rounded-full px-2.5 py-0.5 text-xs font-medium sm:order-none ${CONFIDENCE_STYLE[c.confidence]}`}>
             <span className="sr-only">{s.confidence}: </span>
             {m.confidence[c.confidence]}
           </span>
-          <p className="w-32 text-right font-semibold tabular-nums text-slate-900">
+          <p className="ml-auto whitespace-nowrap text-right font-semibold tabular-nums text-slate-900 sm:w-32">
             <span className="sr-only">{s.monthly}: </span>
             {formatMoney(c.monthlyEstimate, m)}
           </p>
-          {/* Sabit genişlik: iptal bağlantısı olmayan satırlarda da rozet ve tutar hizalı kalır. */}
-          <div className="w-full text-sm sm:w-36">
+          {/* Masaüstünde sabit genişlik: iptal bağlantısı olmayan satırlarda da rozet ve tutar hizalı kalır.
+              Mobilde rozet ve bağlantı alt satıra iner, tutar ismin yanında sağda kalır. */}
+          <div className="order-3 min-w-0 flex-1 text-sm sm:order-none sm:w-36 sm:flex-none">
             {c.merchant?.cancelUrl ? (
               <a
                 href={c.merchant.cancelUrl}
@@ -88,7 +91,7 @@ function TransactionList({ items, m }: { items: Transaction[]; m: Messages }) {
         <li key={i} className="flex flex-wrap items-baseline gap-x-4 gap-y-1 px-4 py-2.5">
           <span className="w-24 shrink-0 tabular-nums text-slate-500">{formatDate(t.date, m)}</span>
           <span className="min-w-0 flex-1 break-words text-slate-800">{t.rawDescription}</span>
-          <span className="tabular-nums font-medium text-slate-900">{formatMoney(t.amount, m)}</span>
+          <span className="ml-auto whitespace-nowrap text-right tabular-nums font-medium text-slate-900">{formatMoney(t.amount, m)}</span>
         </li>
       ))}
     </ul>
@@ -165,10 +168,10 @@ export function Results({ report, onReset, onDownloadCsv }: Props) {
             {a.fees.map((g) => (
               <li key={g.rule?.id ?? g.kind} className="rounded-2xl border border-slate-200 bg-white p-4">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <p className="font-medium text-slate-900">
+                  <p className="min-w-0 flex-1 font-medium text-slate-900">
                     {feeLabel(g, m)} <span className="text-sm font-normal text-slate-500">×{g.transactions.length}</span>
                   </p>
-                  <p className="font-semibold tabular-nums text-slate-900">{formatMoney(g.total, m)}</p>
+                  <p className="ml-auto whitespace-nowrap text-right font-semibold tabular-nums text-slate-900">{formatMoney(g.total, m)}</p>
                 </div>
                 {g.rule && <p className="mt-1 text-sm text-slate-600">{g.rule.explanation}</p>}
               </li>
@@ -184,7 +187,7 @@ export function Results({ report, onReset, onDownloadCsv }: Props) {
           <ul className="divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white">
             {a.installments.map((it, i) => (
               <li key={i} className="flex flex-wrap items-baseline justify-between gap-2 p-4">
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <p className="font-medium text-slate-900">{it.transaction.normalized}</p>
                   <p className="text-sm text-slate-600">
                     {format(r.installments.progress, {
@@ -198,7 +201,7 @@ export function Results({ report, onReset, onDownloadCsv }: Props) {
                     })}
                   </p>
                 </div>
-                <p className="font-semibold tabular-nums text-slate-900">{formatMoney(it.transaction.amount, m)}</p>
+                <p className="ml-auto whitespace-nowrap text-right font-semibold tabular-nums text-slate-900">{formatMoney(it.transaction.amount, m)}</p>
               </li>
             ))}
           </ul>
