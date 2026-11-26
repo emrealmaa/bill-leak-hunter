@@ -1,0 +1,50 @@
+name: "Satıcı ekle / Add a merchant"
+description: "Kataloğa abonelik ya da satıcı ekleme önerisi / Suggest a merchant for the catalog"
+labels: ["catalog"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Ekstre içeriği paylaşmayın.** Ekstreden satır, tutar, tarih ya da ekran görüntüsü eklemeyin. Satıcının ekstrede *nasıl yazıldığını* kendi kelimelerinizle, kişisel bilgi olmadan tarif edin (örn. "IYZICO* ile başlıyor, ardından servis adı").
+        ⚠️ **Do not share statement content.** No lines, amounts, dates or screenshots. Describe *how* the merchant appears in your own words, without personal data.
+  - type: input
+    id: name
+    attributes:
+      label: "Satıcı adı / Merchant name"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Kategori / Category"
+      options: [video, music, gaming, software, cloud, telecom, fitness, news, food-delivery, transport, other]
+    validations:
+      required: true
+  - type: dropdown
+    id: subscription
+    attributes:
+      label: "Abonelik mi? / Is it a subscription?"
+      options:
+        - "Evet / Yes"
+        - "Hayır / No"
+    validations:
+      required: true
+  - type: textarea
+    id: pattern
+    attributes:
+      label: "Ekstrede nasıl görünüyor? / How does it appear on statements?"
+      description: "Kişisel bilgi ve referans numarası olmadan / Without personal data or reference numbers"
+    validations:
+      required: true
+  - type: input
+    id: cancel
+    attributes:
+      label: "Resmi iptal sayfası (biliyorsanız) / Official cancellation page (if known)"
+      placeholder: "https://"
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Gizlilik / Privacy"
+      options:
+        - label: "Bu issue'da ekstre içeriği yok / This issue contains no statement content"
+          required: true

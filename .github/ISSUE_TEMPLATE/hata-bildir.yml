@@ -1,0 +1,30 @@
+name: "Hata bildir / Report a bug"
+description: "Bir şey yanlış çalışıyor / Something does not work"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Ekstre içeriği paylaşmayın.** Ekstre dosyası, ekran görüntüsü ya da işlem satırı eklemeyin. Sorunu içerik göstermeden tarif edin (örn. "taksitli işlemler hiç görünmüyor", "işlem sayısı 1 eksik").
+        ⚠️ **Do not share statement content.** No files, screenshots or transaction lines. Describe the problem without content (e.g. "installments never show up").
+  - type: input
+    id: bank
+    attributes:
+      label: "Banka / Bank"
+  - type: textarea
+    id: what
+    attributes:
+      label: "Ne oldu, ne bekliyordunuz? / What happened, what did you expect?"
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: "Tarayıcı ve cihaz / Browser and device"
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Gizlilik / Privacy"
+      options:
+        - label: "Bu issue'da ekstre içeriği yok / This issue contains no statement content"
+          required: true

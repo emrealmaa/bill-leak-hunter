@@ -1,0 +1,40 @@
+name: "Bankamı ekle / Add my bank"
+description: "Henüz desteklenmeyen bir banka için istek / Request support for a bank"
+labels: ["bank-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Ekstre içeriği paylaşmayın.** Ekstre dosyası, ekran görüntüsü, kopyalanmış metin (bozuk görünse bile), ad, kart numarası, tutar ya da işlem satırı eklemeyin.
+        ⚠️ **Do not share statement content.** No statement files, screenshots, copied text (even if it looks garbled), names, card numbers, amounts or transaction lines.
+  - type: input
+    id: bank
+    attributes:
+      label: "Banka ve kart / Bank and card"
+      placeholder: "Örn. Örnek Bank, Örnek Kart"
+    validations:
+      required: true
+  - type: input
+    id: country
+    attributes:
+      label: "Ülke / Country"
+    validations:
+      required: true
+  - type: dropdown
+    id: copyable
+    attributes:
+      label: "PDF'ten metin kopyalanabiliyor mu? / Can you copy text from the PDF?"
+      description: "PDF'i açıp bir kelimeyi kopyalayıp yapıştırın; düzgün çıkıyor mu? (Sonucu buraya yapıştırmayın.) / Copy a word and paste it somewhere; is it readable? (Do not paste it here.)"
+      options:
+        - "Evet, düzgün / Yes, readable"
+        - "Hayır, bozuk karakterler / No, garbled"
+        - "Bilmiyorum / Don't know"
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Gizlilik / Privacy"
+      options:
+        - label: "Bu issue'da ekstre içeriği yok / This issue contains no statement content"
+          required: true

@@ -19,7 +19,11 @@
 | 9 — Analiz motoru | ✅ sentetikle bitti · ⏳ gerçek ekstre kontrolü Emre'de | `src/analysis/`, uçtan uca hat `src/pipeline.ts`. Gerçek kontrol glif tablosunu bekliyor |
 | 10 — Arayüz | ✅ bitti · ⏳ "teknik olmayan biri anlıyor mu" denemesi Emre'de | Karşılama, işleniyor, hata, sonuç ekranları; TR/EN; DebugPage yalnızca `npm run dev` + `#debug` |
 | 11 — CSV dışa aktarma | ✅ bitti | UTF-8 BOM, TR'de `;` + virgüllü ondalık, formül enjeksiyonuna karşı koruma |
+| 12 — Dokümantasyon | ✅ bitti · ⏳ lisans kararı Emre'de | README (EN) + README.tr.md, CONTRIBUTING.md, 3 issue şablonu. LICENSE eklenmedi. Ekran görüntüsü yerine yer tutucu |
 
 ## Açık sorular
+
+- Lisans (öneri: MIT). Karar verilince LICENSE eklenecek ve README'lerdeki "Henüz belirlenmedi" satırı güncellenecek.
+- Issue şablonlarındaki `bank-request` ve `catalog` etiketleri repoda yok; GitHub var olmayan etiketi uygulamaz. İstenirse etiketler oluşturulabilir.
 
 - Sentetik fixture'ın sütun düzeni ve satır tipleri (özellikle "Kalan Borç / Taksit" sütununun içeriği ve yabancı para ekinin yazılışı) gerçek ekstreyi görmeden tahminle yazıldı. Emre yapının gerçeğe benzeyip benzemediğini söylemeli (içerik göstermeden).
