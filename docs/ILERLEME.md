@@ -15,6 +15,7 @@
 | 5 — Akbank parse | ✅ sentetikle bitti · ⏳ gerçek doğrulama glif tablosunu bekliyor | `npm run akbank-check` iki gerçek ekstrede şu an `missing-glyph-table` diyor (beklenen). DebugPage'de "Ayrıştırılmış işlemler" sekmesi |
 | 6 — Normalleştirici | ✅ bitti | `src/normalize/`; ödeme aracıları `catalog/intermediaries.json` |
 | 7 — Katalog | ✅ bitti | 81 satıcı, hepsi `verified: false`; `cancelUrl` yalnızca 6 kayıtta (emin olunanlar); `npm run validate-catalog` build'e bağlı |
+| 8 — Ücret ve vergi kuralları | ✅ bitti | 15 kural (`catalog/fees/`): ücretler, KKDF/BSMV/damga vergisi, faiz türleri; açıklamalar bilgilendirici |
 
 ## Açık sorular
 
